@@ -1,0 +1,1 @@
+{"name":"Local: wowFactor","url":"c:\\Users\\Swayam\\Desktop\\CP\\wowFactor.cpp","tests":[{"id":1768459819977,"input":"vvvovvv\n","output":"4"},{"id":1768459969719,"input":"vvovooovovvovoovoovvvvovovvvov\n","output":"100"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CP\\wowFactor.cpp","group":"local","local":true}

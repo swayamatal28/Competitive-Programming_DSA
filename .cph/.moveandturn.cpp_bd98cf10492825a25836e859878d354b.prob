@@ -1,0 +1,1 @@
+{"name":"Local: moveandturn","url":"c:\\Users\\Swayam\\Desktop\\CP\\moveandturn.cpp","tests":[{"id":1767513219806,"input":"3\n1\n2\n3","output":"4\n4\n12"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CP\\moveandturn.cpp","group":"local","local":true}
