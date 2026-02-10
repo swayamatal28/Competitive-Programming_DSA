@@ -1,0 +1,1 @@
+{"name":"Local: hossaAndFriends","url":"c:\\Users\\Swayam\\Desktop\\CP\\hossaAndFriends.cpp","tests":[{"id":1770715986982,"input":"2\n3 2\n1 3\n2 3\n4 2\n1 2\n2 3\n","output":"4\n5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CP\\hossaAndFriends.cpp","group":"local","local":true}
