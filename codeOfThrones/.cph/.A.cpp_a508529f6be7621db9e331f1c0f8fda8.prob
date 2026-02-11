@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"c:\\Users\\Swayam\\Desktop\\CP\\codeOfThrones\\A.cpp","tests":[{"id":1770820346794,"input":"2\n1\n2\n","output":"1 1\n1 1 1\n7 3\n1 1 1 2\n1 2 1 2\n2 1 1 2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CP\\codeOfThrones\\A.cpp","group":"local","local":true}

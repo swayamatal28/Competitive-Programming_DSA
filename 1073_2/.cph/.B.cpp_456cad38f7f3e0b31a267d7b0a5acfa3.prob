@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"c:\\Users\\Swayam\\Desktop\\CP\\1073_2\\B.cpp","tests":[{"id":1770744583094,"input":"3\n2\n1 0\n3\n0 3 0\n6\n1 0 5 0 6 1\n","output":"YES\nNO\nYES\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CP\\1073_2\\B.cpp","group":"local","local":true}
