@@ -19,9 +19,26 @@ int main()
     while(t--)
     {
         ll x,y;cin >> x>>y;
-        if((x+y)%3==0 && ((y>=0 && x>=2*y)||(y<0 && x>=-4*y))) cout << "YES" << endl;
-        else cout << "NO" << endl;
-
+        if(y==0)
+        {
+            if(x%3==0 && x>=0) cout << "YES" << endl;
+            else cout << "NO" << endl;
+            continue;
+        }
+        if(y>0)
+        {
+            x=x-(y*2);
+            if(x%3==0 && x>=0) cout << "YES" << endl;
+            else cout << "NO" << endl;
+            continue;
+        }
+        if(y<0)
+        {
+            x=x-(-4*y);
+            if(x%3==0 && x>=0) cout << "YES" << endl;
+            else cout << "NO" << endl;
+            continue;
+        }
     }
     return 0;
 }

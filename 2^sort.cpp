@@ -18,26 +18,28 @@ int main()
     int t;cin>>t;
     while(t--)
     {
-       int n;cin >> n;
-       vector<int> a(n);
-       for(int i=0;i<n;i++)
-        cin >> a[i];
-        int count=1;
-        int temp=a[0];
-       for(int i=1;i<n;i++)
-       {
-            if(a[i]<=a[i-1]+1 && a[i]>temp)
+        int n,k;cin >> n >> k;
+        vector<ll> a(n);
+        for(int i=0;i<n;i++) cin >> a[i];
+
+        int l=0,r=1;
+        long long count_subarray=0;
+        while(r<n)
+        {
+            if(2*a[r]>a[r-1])
             {
-                continue;
+                if(r-l+1>=k+1)
+                {
+                    count_subarray++;
+                }
+                r++;
             }
             else{
-                count++;
-                temp=a[i];  
+                l=r;
+                r=l+1;
             }
-       }
-       cout << count << endl;
-
-
+        }
+        cout << count_subarray << endl;
     }
     return 0;
 }
