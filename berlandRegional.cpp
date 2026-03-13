@@ -57,7 +57,7 @@ int main()
             for (int i = 0; i < sz; i++)
             {
                 sum += what[i];
-                temp.push_back(sum);
+                temp.push_back(sum); 
             }
             val.second = temp;
         }
