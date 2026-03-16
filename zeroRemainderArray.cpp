@@ -40,7 +40,7 @@ int main()
         }
         map<int,int> mpp;
         sort(temp.begin(),temp.end());
-        // for(auto t:temp) cout << t << " ";
+        // for(auto t:temp) cout << t << " " ;
         // cout << "temp:" << endl;
 
         long long maxi=0;
