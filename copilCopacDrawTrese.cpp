@@ -18,8 +18,12 @@ int main()
     int t;cin>>t;
     while(t--)
     {
-        int n;cin >> n;
-        //n-1 edgs
+        int n;cin >>n;
+        map<pair<int,int>,int> idx;
+        for(int i=1;i<=n-1;i++){
+            int u,v;cin >> u >> v;
+            idx[{u,v}]=i;
+        }
     }
     return 0;
 }
