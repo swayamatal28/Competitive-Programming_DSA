@@ -1,0 +1,1 @@
+{"name":"Local: fence","url":"c:\\Users\\Swayam\\Desktop\\CP\\fence.cpp","tests":[{"id":1774794463927,"input":"7 3\n1 2 6 1 1 7 1\n","output":"3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CP\\fence.cpp","group":"local","local":true}
