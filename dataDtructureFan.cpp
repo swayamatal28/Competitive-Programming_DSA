@@ -71,20 +71,6 @@ vector<ll> primeFactors(ll n) {
     return factors;
 }
 
-int f(vector<int>& dp,int n,vector<int>& a){
-    if(n==a.size()) return 0;
-    if(dp[n]!=-1) return dp[n];
-    int take=-1e9;
-    if(n+a[n]+1<=a.size())
-    {
-        take=f(dp,n+a[n]+1,a);
-    }
-    else if(n+a[n]+1>a.size()) take=a.size()-n ;
-    int ntake=-1e9;
-    ntake=1+f(dp,n+1,a);
-    return dp[n]=min(take,ntake);
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -96,13 +82,50 @@ int main()
     {
         int n;cin >> n;
         vector<int> a(n);
-        for(int i=0;i<n;i++) cin >> a[i];
-        
-        vector<int> dp(n,-1);
-        int ans=f(dp,0,a);
-        cout << ans << endl;
-
+        for(int i=0;i<n;i++) cin>> a[i];
+        string s;cin >> s;
+        int q;cin >> q;
+        int x0=0;
+        int x1=0;
+        vector<int> pref(n);
+        pref[0]=a[0];
+        for(int i=0;i<n;i++){
+            if(i>0) pref[i]=pref[i-1]^a[i];
+            if(s[i]=='0') x0=x0^a[i];
+            else x1=x1^a[i];
+        }
+        while(q--)
+        {
+            int type;cin >> type;
+            int l,r,x;
+            if(type==1)
+            {
+                cin >> l >> r; 
+                l--;r--;
+                int valu=(l==0?pref[r]:pref[r]^pref[l-1]);
+                x0=x0^valu;
+                x1=x1^valu;
+            }
+            else{
+                cin>>x;
+                if(x==0)
+                {
+                    cout << x0 <<" ";
+                }
+                else cout << x1 << " ";
+            }
+        }
+        cout << endl;
     }
 
     return 0;
 }
+
+
+// a   1 2 3 4 5
+// s   0 1 0 0 0
+// pre 1 3 0 4 1
+// x0=3
+// x1=2
+
+// 011
