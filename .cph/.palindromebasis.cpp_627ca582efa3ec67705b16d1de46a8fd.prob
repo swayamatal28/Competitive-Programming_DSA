@@ -1,0 +1,1 @@
+{"name":"Local: palindromebasis","url":"c:\\Users\\Swayam\\Desktop\\CP\\palindromebasis.cpp","tests":[{"id":1775742223233,"input":"2\n5\n12\n","output":"7\n74"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Swayam\\Desktop\\CP\\palindromebasis.cpp","group":"local","local":true}
