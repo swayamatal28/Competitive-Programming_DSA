@@ -60,18 +60,18 @@ vector<ll> primeFactors(ll n) {
 }
 
 const int mod=1e9+7;
-int f(vector<vector<int>>& dp,vector<int>& coins,int i,int n)
-{
-    if(n==0) return 1;
-    if(i<0) return 0;
-    if(dp[n][i]!=-1) return dp[n][i];
-    int take=0,ntake=0;
-    if(coins[i]<=n)
-    take=f(dp,coins,i,n-coins[i]);
-    ntake=f(dp,coins,i-1,n);
+// int f(vector<vector<int>>& dp,vector<int>& coins,int i,int n)
+// {
+//     if(n==0) return 1;
+//     if(i<0) return 0;
+//     if(dp[n][i]!=-1) return dp[n][i];
+//     int take=0,ntake=0;
+//     if(coins[i]<=n)
+//     take=f(dp,coins,i,n-coins[i]);
+//     ntake=f(dp,coins,i-1,n);
 
-    return dp[n][i]=(take+ntake)%mod;
-}
+//     return dp[n][i]=(take+ntake)%mod;
+// }
 
 bool ispal(int x)
 {
@@ -96,12 +96,19 @@ int main()
     vector<int> coins;
     
     for(int i=1;i<=40000;i++) if(ispal(i)) coins.push_back(i);
-    vector<vector<int>> dp(40001,vector<int>(coins.size()+1,-1));
+    vector<int> dp(40001,0);
+    dp[0]=1;
+    for(auto coin:coins)
+    {
+        for(int i=coin;i<=40000;i++){
+            dp[i]=(dp[i]+dp[i-coin])%mod;
+        }
+    }
     while(t--)
     {
         int n;cin >> n;
-        f(dp,coins,coins.size()-1,n);
-        int ans=dp[n][coins.size()-1];
+        // f(dp,coins,coins.size()-1,n);
+        int ans=dp[n];
         cout << ans << endl;
     }
 
