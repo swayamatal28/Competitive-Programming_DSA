@@ -80,28 +80,27 @@ int main()
     cin >> t;
     while(t--)
     {
-        int n,a,b;
-        cin >> n >> a >> b;
-        vector<long long> x(n),p(n+1,0);
-
-        for(int i=0;i<n;i++) {
-            cin >> x[i];
-            p[i+1]=1LL*p[i]+x[i];
+     int n;cin >> n;
+     vector<int> a(n);
+     for(int i=0;i<n;i++) cin >> a[i];
+     sort(a.rbegin(),a.rend());
+     int ans=0;
+     set<int> st;
+     for(int i=0;i<n;i++){
+        if(st.find(a[i])!=st.end()){
+            ans=-1;
+            break;
         }
-        ll cost=1e18;
-
-        for(int i=0;i<n;i++)
-        {
-            ll temp_cost=1LL*a*x[i]+b*(p[n]-p[i]-(n-i-1)*x[i]);
-            cost=min(cost,temp_cost);
-
-        }
-        cost=min(cost,b*(p[n]-n*0));
-        cout << cost << endl;
-        
-        
-
-
+        st.insert(a[i]);
+     }   
+     if(ans==-1){
+        cout << -1 << endl;
+        continue;
+     }
+     else{
+        for(int i=0;i<n;i++) cout << a[i] << " ";
+        cout << endl;
+     }
     }
 
     return 0;

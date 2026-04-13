@@ -80,28 +80,26 @@ int main()
     cin >> t;
     while(t--)
     {
-        int n,a,b;
-        cin >> n >> a >> b;
-        vector<long long> x(n),p(n+1,0);
-
-        for(int i=0;i<n;i++) {
-            cin >> x[i];
-            p[i+1]=1LL*p[i]+x[i];
+        int n,m;cin >> n >> m;
+        vector<int> a(n);
+        for(int i=0;i<n;i++) cin >> a[i];
+        bool flag=true;
+        int cur=1;
+        int maxi=1;
+        for(int i=1;i<n;i++){
+            if(a[i]%m == a[i-1]%m){
+                cur++;
+            }
+            else{
+                cur=1;
+            }
+            maxi=max(maxi,cur);
         }
-        ll cost=1e18;
-
-        for(int i=0;i<n;i++)
-        {
-            ll temp_cost=1LL*a*x[i]+b*(p[n]-p[i]-(n-i-1)*x[i]);
-            cost=min(cost,temp_cost);
-
+        if(n>0 && maxi>=m){
+            flag=false;
         }
-        cost=min(cost,b*(p[n]-n*0));
-        cout << cost << endl;
-        
-        
-
-
+        if(flag) cout << "YES" << endl;
+        else cout <<"NO" << endl;
     }
 
     return 0;

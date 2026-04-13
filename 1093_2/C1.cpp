@@ -80,28 +80,26 @@ int main()
     cin >> t;
     while(t--)
     {
-        int n,a,b;
-        cin >> n >> a >> b;
-        vector<long long> x(n),p(n+1,0);
+        ll p,q; cin >> p >> q;
+        ll k=2*p+4*q+1;
+        bool flag=false;
+        ll n,m;
+        for(ll i=3;i*i<=k;i++){
+            if(k%i==0){
+                ll b=k/i;
+                if(b>=3){
+                    if(abs(b-i)<=2*p){
+                        n=(i-1)/2;
+                        m=(b-1)/2;
+                        flag=true;
+                        break;
 
-        for(int i=0;i<n;i++) {
-            cin >> x[i];
-            p[i+1]=1LL*p[i]+x[i];
+                }
+            }
         }
-        ll cost=1e18;
-
-        for(int i=0;i<n;i++)
-        {
-            ll temp_cost=1LL*a*x[i]+b*(p[n]-p[i]-(n-i-1)*x[i]);
-            cost=min(cost,temp_cost);
-
-        }
-        cost=min(cost,b*(p[n]-n*0));
-        cout << cost << endl;
+        if(!flag) cout << -1 << endl;
+        else cout << n << " " << m <<endl   ;
         
-        
-
-
     }
 
     return 0;
